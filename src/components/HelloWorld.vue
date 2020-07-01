@@ -1,40 +1,66 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-jest" target="_blank" rel="noopener">unit-jest</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+    <h1>{{ message }}</h1>
+    <h1>{{ hhh }}</h1>
+    <h1>{{ obj.a }}</h1>
+    <h1>{{ obj.b }}</h1>
+    <input type="text" :value="msg" @input="change1">
+    <input type="text" :value="hhh" @input="change2">
+    <input type="text" v-model="obj.a">
+    <input type="text" v-model="obj.b">
+    <tree-folder :folder="folder" />
   </div>
 </template>
 
 <script>
+import TreeFolder from '@/components/TreeFolder'
+
 export default {
   name: 'HelloWorld',
+  components: {
+    TreeFolder
+  },
+  inject: ['emmm'],
   props: {
-    msg: String
+    msg: String,
+    hhh: String,
+    obj: {
+      type: Object,
+      default: () => ({
+        a: '',
+        b: ''
+      })
+    }
+  },
+  model: {
+    prop: 'msg',
+    event: 'change'
+  },
+  data: () => ({
+    message: '',
+    folder: {
+      name: '1111111',
+      children: [{
+        name: '2222222',
+        children: [{
+          name: '3333333',
+        }]
+      }]
+    }
+  }),
+  mounted() {
+    const _this = this
+    console.log(_this.name)
+    this.emmm.call(window)
+  },
+  methods: {
+    change1(e) {
+      this.$emit('change', e.target.value)
+    },
+    change2(e) {
+      this.$emit('update:hhh', e.target.value)
+    },
   }
 }
 </script>

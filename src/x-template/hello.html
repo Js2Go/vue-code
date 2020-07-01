@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <!-- <link href="./vue.min.js" as="script" rel="preload"> -->
+    <!-- <script src="./vue.esm.browser.min.js"></script> -->
+    <!-- <script src="./vue.min.js"></script> -->
+  </head>
+  <body>
+    <div id="app">
+      <Hello />
+    </div>
+    <script type="text/x-template" id="hello">
+      <p>Hello</p>
+    </script>
+    <script type="module">
+      import Vue from 'http://localhost:9091/vue.esm.browser.min.js'
+      Vue.component('Hello', {
+        template: '#hello'
+      })
+      new Vue({
+        el: '#app'
+      })
+    </script>
+    <!-- <script>
+      Vue.component('Hello', {
+        template: '#hello'
+      })
+      new Vue({
+        el: '#app'
+      })
+    </script> -->
+  </body>
+</html>
