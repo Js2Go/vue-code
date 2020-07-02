@@ -3,6 +3,14 @@ import App from './App.vue'
 import demo from './plugins/demo'
 import router from './router'
 
+import '@/assets/index.css'
+import comp from './components/Anchor'
+import Affix from './components/Affix'
+
+Vue.use(comp.Anchor)
+Vue.use(comp.AnchorLink)
+Vue.use(Affix)
+
 Vue.use(demo, { ddemo: '12ioasj' })
 
 const getChildrenTextContent = (children) => {

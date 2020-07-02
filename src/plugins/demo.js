@@ -34,10 +34,10 @@ const install = function (Vue, options) {
     el.style.position = 'fixed'
     let s = (binding.arg === 'left' ? 'left' : 'top')
     if (s === 'left') {
-      el.style.top = 'auto'
+      el.style.top = '0'
     }
     if (s === 'top') {
-      el.style.left = 'auto'
+      el.style.left = '0'
     }
     el.style[s] = binding.value + 'px'
   })

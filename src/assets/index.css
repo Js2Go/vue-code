@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.ivu-anchor-wrapper {
+  overflow: auto;
+  padding-left: 4px;
+  margin-left: -4px;
+}
+
+.ivu-anchor {
+  position: relative;
+  padding-left: 2px;
+}
+
+.ivu-anchor-ink {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.ivu-anchor-ink:before {
+  content: " ";
+  position: relative;
+  width: 2px;
+  height: 100%;
+  display: block;
+  background-color: #e8eaec;
+  margin: 0 auto;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+.ivu-anchor-ink-ball {
+  display: inline-block;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid #2d8cf0;
+  background-color: #fff;
+  left: 50%;
+  transition: top .2s ease-in-out;
+  -webkit-transform: translate(-50%,2px);
+  transform: translate(-50%,2px);
+}
+
+.ivu-anchor-link {
+  padding: 8px 0 8px 16px;
+  line-height: 1;
+  text-align: left;
+}
+
+.ivu-anchor-link .ivu-anchor-link {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.ivu-anchor-link-active>.ivu-anchor-link-title {
+  color: #2d8cf0;
+}
+
+.ivu-anchor-link-title:only-child {
+  margin-bottom: 0;
+}
+
+.ivu-anchor-link-title {
+  display: block;
+  position: relative;
+  transition: all .3s;
+  color: #515a6e;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 8px;
+}
+
+a {
+  color: #2d8cf0;
+  background: 0 0;
+  text-decoration: none;
+  outline: 0;
+  cursor: pointer;
+  transition: color .2s ease;
+}

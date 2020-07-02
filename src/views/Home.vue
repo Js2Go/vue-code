@@ -76,3 +76,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+img {
+  transition: .3s;
+  transition-delay: .2s;
+}
+</style>
