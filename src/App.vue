@@ -3,7 +3,13 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link to="/anchor">Anchor</router-link>
+      <router-link to="/anchor">Anchor</router-link> |
+      <router-link to="/scss">Scss</router-link> |
+      <router-link to="/pipeline">Pipeline</router-link> |
+      <router-link to="/transition">Transition</router-link> |
+      <router-link to="/animation">Animation</router-link> |
+      <router-link to="/multi-levels">MultiLevels</router-link> |
+      <router-link to="/drag-drop">DragDrop</router-link> |
     </div>
     <router-view/>
   </div>

@@ -3,6 +3,8 @@ import App from './App.vue'
 import demo from './plugins/demo'
 import router from './router'
 
+import 'animate.css'
+
 import '@/assets/index.css'
 import comp from './components/Anchor'
 import Affix from './components/Affix'

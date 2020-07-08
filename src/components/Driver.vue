@@ -47,7 +47,7 @@ export default {
 
   },
   mounted() {
-    fetch('http://localhost:9091')
+    // fetch('http://localhost:9091')
     // Define the steps for introduction
     setTimeout(() => {
       const driver = new Driver({
@@ -80,13 +80,12 @@ export default {
         },
       ])
       // Start the introduction
-      driver.start();
+      // driver.start();
     }, 1000)
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
   margin: 40px 0 0;

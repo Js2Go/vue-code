@@ -12,12 +12,10 @@
         <label for="ch">点我</label>
       </div>
     </div>
-    <Hhh :show.sync="show" />
   </div>
 </template>
 
 <script>
-import asyncImport from '@/utils/async-component-factory'
 import Driver from '@/components/Driver'
 import SwitchTab from '@/components/switchTab'
 import ImageViewer from '@/components/ImageViewer'
@@ -26,7 +24,6 @@ import { login } from '@/apis/login'
 export default {
   name: 'About',
   components: {
-    Hhh: () => asyncImport(import('@/components/Hhh')),
     Driver,
     SwitchTab,
     ImageViewer
@@ -63,8 +60,12 @@ export default {
       this.ch = !this.ch
     },
     async getToken() {
-      const { token } = await login()
-      localStorage.setItem('token', token)
+      try {
+        const { token } = await login()
+        localStorage.setItem('token', token)
+      } catch (err) {
+        console.error(err)
+      }
     }
   }
 }

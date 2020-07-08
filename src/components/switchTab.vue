@@ -1,6 +1,5 @@
 <template>
-  <!-- <div id="app" class="animate__animated animate__slideInDown"> -->
-  <div>
+  <div id="app" class="animate__animated animate__slideInDown">
     <div>{{ offset }}</div>
     <div class="tabs">
       <div class="tabs-wrap">

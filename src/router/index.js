@@ -16,19 +16,43 @@ Vue.use(VueRouter)
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: About
   },
   {
     path: '/anchor',
     name: 'Anchor',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import('@/views/Anchor')
-  }
+  },
+  {
+    path: '/scss',
+    name: 'Scss-Study',
+    component: () => import('@/views/Scss')
+  },
+  {
+    path: '/pipeline',
+    name: 'Pipeline',
+    component: () => import('@/views/Pipleline')
+  },
+  {
+    path: '/transition',
+    name: 'Transition',
+    component: () => import('@/views/Transition')
+  },
+  {
+    path: '/animation',
+    name: 'Animation',
+    component: () => import('@/views/Animation')
+  },
+  {
+    path: '/multi-levels',
+    name: 'MultiLevels',
+    component: () => import('@/views/MultiLevels')
+  },
+  {
+    path: '/drag-drop',
+    name: 'DragDrop',
+    component: () => import('@/views/DragDrop')
+  },
 ]
 
 const router = new VueRouter({
