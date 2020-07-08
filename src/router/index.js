@@ -53,6 +53,11 @@ Vue.use(VueRouter)
     name: 'DragDrop',
     component: () => import('@/views/DragDrop')
   },
+  {
+    path: '/input-code',
+    name: 'InputCode',
+    component: () => import('@/views/InputCode')
+  }
 ]
 
 const router = new VueRouter({

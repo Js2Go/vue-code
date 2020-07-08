@@ -10,6 +10,7 @@
       <router-link to="/animation">Animation</router-link> |
       <router-link to="/multi-levels">MultiLevels</router-link> |
       <router-link to="/drag-drop">DragDrop</router-link> |
+      <router-link to="/input-code">InputCode</router-link>
     </div>
     <router-view/>
   </div>
